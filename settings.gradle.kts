@@ -1,2 +1,4 @@
-rootProject.name='Taxi'
-include ':app'
+rootProject.name="Taxi"
+include(
+        "app"
+)

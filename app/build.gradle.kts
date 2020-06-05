@@ -1,36 +1,70 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id("com.android.application")
+    kotlin("android")
+    kotlin("android-extensions")
+}
+
+val localProperties = Properties()
+localProperties.load(FileInputStream(rootProject.file("local.properties")))
+
+val keyStoreProperties = Properties()
+keyStoreProperties.load(FileInputStream(rootProject.file("keystore.properties")))
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion(Versions.Build.compileSdk)
+    buildToolsVersion(Versions.Build.buildTools)
 
     defaultConfig {
-        applicationId "com.ride.taxi"
-        minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        applicationId("com.ride.taxi")
+        minSdkVersion(Versions.Build.minSdk)
+        targetSdkVersion(Versions.Build.targetSdk)
+        versionCode(1)
+        versionName("1.0")
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+    }
+
+    signingConfigs {
+        getByName("debug") {
+            keyAlias = keystoreProperties["debugKeyAlias"].toString()
+        }
+
+        create("release") {
+            keyAlias = keystoreProperites["releaseKeyAlias"].toString()
+        }
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName("debug") {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+
+        getByName("release") {
+            isMinifyEnabled = false
+            signingConfigs.getByName("release")
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
+    implementation(Libs.Kotlin.stdlib)
+
+    implementation(Libs.AndroidX.appCompat)
+    implementation(Libs.AndroidX.constraintLayout)
+    implementation(Libs.AndroidX.coreKtx)
+
+    implementation(Libs.Maps.playServices)
+    implementation(Libs.Maps.places)
+
+    testImplementation(Libs.Test.jUnitJupiter)
+    testImplementation(Libs.Test.jUnitJupiterApi)
+    testImplementation(Libs.Test.jUnitJupiterEngine)
+    testImplementation(Libs.Test.mockk)
+
+    androidTestImplementation(Libs.AndroidX.Test.espressoCore)
+    androidTestImplementation(Libs.AndroidX.Test.junit)
 }
