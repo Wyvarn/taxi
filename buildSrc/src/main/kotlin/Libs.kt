@@ -14,7 +14,7 @@ object Libs {
 
     object Kotlin {
         private const val version = Versions.Build.kotlinVersion
-        const val stdblib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
+        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
     }
 
     object Test {

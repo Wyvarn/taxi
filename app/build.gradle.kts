@@ -1,27 +1,30 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("android-extensions")
+    id("org.jetbrains.kotlin.android.extensions")
 }
 
 val localProperties = Properties()
 localProperties.load(FileInputStream(rootProject.file("local.properties")))
 
-val keyStoreProperties = Properties()
-keyStoreProperties.load(FileInputStream(rootProject.file("keystore.properties")))
+val keystoreProperties = Properties()
+keystoreProperties.load(FileInputStream(rootProject.file("keystore.properties")))
 
 android {
     compileSdkVersion(Versions.Build.compileSdk)
     buildToolsVersion(Versions.Build.buildTools)
 
     defaultConfig {
-        applicationId("com.ride.taxi")
+        applicationId = "com.ride.taxi"
         minSdkVersion(Versions.Build.minSdk)
         targetSdkVersion(Versions.Build.targetSdk)
-        versionCode(1)
-        versionName("1.0")
+        versionCode = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -30,13 +33,14 @@ android {
         }
 
         create("release") {
-            keyAlias = keystoreProperites["releaseKeyAlias"].toString()
+            keyAlias = keystoreProperties["releaseKeyAlias"].toString()
         }
     }
 
     buildTypes {
         getByName("debug") {
             signingConfig = signingConfigs.getByName("debug")
+            resValue("string", "google_maps_key", localProperties["apiKey"].toString())
         }
 
         getByName("release") {
@@ -46,6 +50,7 @@ android {
         }
     }
 
+    sourceSets["main"].java.srcDir("src/main/kotlin")
 }
 
 dependencies {
@@ -66,5 +71,5 @@ dependencies {
     testImplementation(Libs.Test.mockk)
 
     androidTestImplementation(Libs.AndroidX.Test.espressoCore)
-    androidTestImplementation(Libs.AndroidX.Test.junit)
+    androidTestImplementation(Libs.AndroidX.Test.jUnit)
 }

@@ -14,3 +14,6 @@
 .externalNativeBuild
 .cxx
 keystore.properties
+buildSrc/build/
+buildSrc/build/kotlin/sessions/
+buildSrc/build/pluginDescriptors/

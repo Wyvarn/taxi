@@ -1,4 +1,6 @@
-rootProject.name="Taxi"
+rootProject.name = "Taxi"
+rootProject.buildFileName = "build.gradle.kts"
+
 include(
         "app"
 )
