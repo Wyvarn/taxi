@@ -45,6 +45,7 @@ android {
 
         getByName("release") {
             isMinifyEnabled = false
+            resValue("string", "google_maps_key", localProperties["apiKey"].toString())
             signingConfigs.getByName("release")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
