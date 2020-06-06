@@ -13,4 +13,7 @@
 /captures
 .externalNativeBuild
 .cxx
-gradle.properties
+keystore.properties
+buildSrc/build/
+buildSrc/build/kotlin/sessions/
+buildSrc/build/pluginDescriptors/
