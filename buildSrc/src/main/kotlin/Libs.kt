@@ -25,8 +25,9 @@ object Libs {
         const val mockk = "io.mockk:mockk:1.10.0"
     }
 
-    object Maps {
-        const val playServices = "com.google.android.gms:play-services-maps:17.0.0"
+    object Google {
+        const val playServicesMaps = "com.google.android.gms:play-services-maps:17.0.0"
         const val places = "com.google.android.libraries.places:places:2.2.0"
+        const val maps = "com.google.maps:google-maps-services:0.2.9"
     }
 }

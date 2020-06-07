@@ -1,0 +1,22 @@
+# https://github.com/actions/labeler
+chore:
+  - .gitignore
+  - gradle.properties
+  - github/*
+
+build:
+  - build.gradle.kts
+  - ./*.gradle.kts
+
+dependencies:
+  - buildSrc/*
+  - build.gradle.kts
+  - ./*.gradle.kts
+
+documentation:
+  - ./*.md
+  - LICENSE
+
+ci:
+  - .releaserc.json
+  - github/workflows/*

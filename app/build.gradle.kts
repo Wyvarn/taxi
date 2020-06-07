@@ -63,8 +63,9 @@ dependencies {
     implementation(Libs.AndroidX.constraintLayout)
     implementation(Libs.AndroidX.coreKtx)
 
-    implementation(Libs.Maps.playServices)
-    implementation(Libs.Maps.places)
+    implementation(Libs.Google.playServicesMaps)
+    implementation(Libs.Google.places)
+    implementation(Libs.Google.maps)
 
     testImplementation(Libs.Test.jUnitJupiter)
     testImplementation(Libs.Test.jUnitJupiterApi)
