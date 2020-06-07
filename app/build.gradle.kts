@@ -34,19 +34,23 @@ android {
 
         create("release") {
             keyAlias = keystoreProperties["releaseKeyAlias"].toString()
+            keyPassword = keystoreProperties["releaseKeyPass"].toString()
+            storePassword = keystoreProperties["releaseKeyStorePass"].toString()
+            storeFile = rootProject.file(keystoreProperties["releaseKeyStoreFile"].toString())
         }
     }
 
     buildTypes {
         getByName("debug") {
             signingConfig = signingConfigs.getByName("debug")
-            resValue("string", "google_maps_key", localProperties["apiKey"].toString())
+            resValue("string", "google_maps_key", localProperties["googleMapsApiKey"].toString())
             resValue("string", "app_center_key", localProperties["appCenterKey"].toString())
         }
 
         getByName("release") {
             isMinifyEnabled = false
-            resValue("string", "google_maps_key", localProperties["apiKey"].toString())
+            resValue("string", "google_maps_key", localProperties["googleMapsApiKey"].toString())
+            resValue("string", "app_center_key", localProperties["appCenterKey"].toString())
             signingConfigs.getByName("release")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }

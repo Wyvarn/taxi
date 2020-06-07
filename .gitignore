@@ -17,3 +17,6 @@ keystore.properties
 buildSrc/build/
 buildSrc/build/kotlin/sessions/
 buildSrc/build/pluginDescriptors/
+*.jks
+*.pepk
+*.aab
