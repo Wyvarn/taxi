@@ -17,3 +17,4 @@ echo debugKeyStorePass=$DEBUG_KEY_STORE_PASS >> keystore.properties
 echo releaseKeyAlias=$RELEASE_KEY_ALIAS >> keystore.properties
 echo releaseKeyPass=$RELEASE_KEY_PASS >> keystore.properties
 echo releaseKeyStorePass=$RELEASE_KEY_STORE_PASS >> keystore.properties
+echo releaseKeyStoreFile=$RELEASE_KEY_STORE_FILE >> keystore.properties
