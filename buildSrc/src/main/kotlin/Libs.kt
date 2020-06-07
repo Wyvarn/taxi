@@ -30,4 +30,10 @@ object Libs {
         const val places = "com.google.android.libraries.places:places:2.2.0"
         const val maps = "com.google.maps:google-maps-services:0.2.9"
     }
+
+    object AppCenter {
+        private const val appCenterSdkVersion = "3.2.1"
+        const val analytics = "com.microsoft.appcenter:appcenter-analytics:$appCenterSdkVersion"
+        const val crashes = "com.microsoft.appcenter:appcenter-crashes:$appCenterSdkVersion"
+    }
 }

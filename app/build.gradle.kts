@@ -41,6 +41,7 @@ android {
         getByName("debug") {
             signingConfig = signingConfigs.getByName("debug")
             resValue("string", "google_maps_key", localProperties["apiKey"].toString())
+            resValue("string", "app_center_key", localProperties["appCenterKey"].toString())
         }
 
         getByName("release") {
@@ -66,6 +67,9 @@ dependencies {
     implementation(Libs.Google.playServicesMaps)
     implementation(Libs.Google.places)
     implementation(Libs.Google.maps)
+
+    implementation(Libs.AppCenter.analytics)
+    implementation(Libs.AppCenter.crashes)
 
     testImplementation(Libs.Test.jUnitJupiter)
     testImplementation(Libs.Test.jUnitJupiterApi)
