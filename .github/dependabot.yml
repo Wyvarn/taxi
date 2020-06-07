@@ -2,8 +2,7 @@
 version: 2
 
 updates:
-  - package-ecosystem: pip
-    versioning-strategy: "lockfile-only"
+  - package-ecosystem: gradle
     open-pull-requests-limit: 10
     directory: "/"
     schedule:
@@ -13,7 +12,8 @@ updates:
       timezone: "Africa/Nairobi"
     labels:
       - "dependencies"
-      - "python"
+      - "kotlin"
+      - "java"
     assignees:
       - dependabot
     reviewers:
