@@ -1,5 +1,5 @@
-import java.util.Properties
 import java.io.FileInputStream
+import java.util.*
 
 plugins {
     id("com.android.application")
@@ -8,10 +8,26 @@ plugins {
 }
 
 val localProperties = Properties()
-localProperties.load(FileInputStream(rootProject.file("local.properties")))
+
+try {
+    localProperties.load(FileInputStream(rootProject.file("local.properties")))
+} catch (e: Exception) {
+    localProperties.setProperty("googleMapsApiKey", System.getenv("GOOGLE_MAPS_KEY"))
+    localProperties.setProperty("appcenterKey", System.getenv("APP_CENTER_TOKEN"))
+}
 
 val keystoreProperties = Properties()
-keystoreProperties.load(FileInputStream(rootProject.file("keystore.properties")))
+try {
+    keystoreProperties.load(FileInputStream(rootProject.file("keystore.properties")))
+} catch (e: Exception) {
+    keystoreProperties.setProperty("debugKeyAlias", System.getenv("DEBUG_KEY_ALIAS"))
+    keystoreProperties.setProperty("debugKeyPass", System.getenv("DEBUG_KEY_PASS"))
+    keystoreProperties.setProperty("debugKeyStorePass", System.getenv("DEBUG_KEY_STORE_PASS"))
+    keystoreProperties.setProperty("releaseKeyAlias", System.getenv("RELEASE_KEY_ALIAS"))
+    keystoreProperties.setProperty("releaseKeyPass", System.getenv("RELEASE_KEY_PASS"))
+    keystoreProperties.setProperty("releaseKeyStorePass", System.getenv("RELEASE_KEY_STORE_PASS"))
+    keystoreProperties.setProperty("releaseKeyStoreFile", System.getenv("RELEASE_KEY_STORE_FILE"))
+}
 
 android {
     compileSdkVersion(Versions.Build.compileSdk)
@@ -52,7 +68,10 @@ android {
             resValue("string", "google_maps_key", localProperties["googleMapsApiKey"].toString())
             resValue("string", "app_center_key", localProperties["appCenterKey"].toString())
             signingConfigs.getByName("release")
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
