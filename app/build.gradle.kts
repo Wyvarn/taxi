@@ -13,7 +13,7 @@ try {
     localProperties.load(FileInputStream(rootProject.file("local.properties")))
 } catch (e: Exception) {
     localProperties.setProperty("googleMapsApiKey", System.getenv("GOOGLE_MAPS_KEY"))
-    localProperties.setProperty("appcenterKey", System.getenv("APP_CENTER_TOKEN"))
+    localProperties.setProperty("appCenterKey", System.getenv("APP_CENTER_TOKEN"))
 }
 
 val keystoreProperties = Properties()
