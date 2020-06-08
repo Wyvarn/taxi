@@ -58,16 +58,16 @@ android {
 
     buildTypes {
         getByName("debug") {
-            signingConfig = signingConfigs.getByName("debug")
             resValue("string", "google_maps_key", localProperties["googleMapsApiKey"].toString())
             resValue("string", "app_center_key", localProperties["appCenterKey"].toString())
         }
 
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             resValue("string", "google_maps_key", localProperties["googleMapsApiKey"].toString())
             resValue("string", "app_center_key", localProperties["appCenterKey"].toString())
-            signingConfigs.getByName("release")
+            // Enable this, if you CI provider does not cater to signing the application code
+            // signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
