@@ -18,5 +18,6 @@ buildSrc/build/
 buildSrc/build/kotlin/sessions/
 buildSrc/build/pluginDescriptors/
 *.jks
+*.jks.old
 *.pepk
 *.aab
