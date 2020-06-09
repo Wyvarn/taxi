@@ -19,7 +19,7 @@ class TaxiApp : Application() {
 
     private fun setupAppCenter(application: Application) {
         AppCenter.start(
-            application, getString(R.string.app_center_key),
+            application, BuildConfig.APP_CENTER_TOKEN,
             Analytics::class.java,
             Crashes::class.java
         )
