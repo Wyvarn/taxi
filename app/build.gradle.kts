@@ -5,6 +5,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("org.jetbrains.kotlin.android.extensions")
+    id("kotlin-android")
 }
 
 val localProperties = Properties()
@@ -82,6 +83,15 @@ android {
     }
 
     sourceSets["main"].java.srcDir("src/main/kotlin")
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -92,6 +102,7 @@ dependencies {
     implementation(Libs.AndroidX.appCompat)
     implementation(Libs.AndroidX.constraintLayout)
     implementation(Libs.AndroidX.coreKtx)
+    implementation(Libs.AndroidX.navigationUiKtx)
 
     implementation(Libs.Google.playServicesMaps)
     implementation(Libs.Google.places)

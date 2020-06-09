@@ -5,7 +5,7 @@ object Libs {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
         const val coreKtx = "androidx.core:core-ktx:1.2.0"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
-
+        const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:2.1.0"
         object Test {
             const val espressoCore = "androidx.test.espresso:espresso-core:3.2.0"
             const val jUnit = "androidx.test.ext:junit:1.1.1"
