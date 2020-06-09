@@ -21,3 +21,4 @@ buildSrc/build/pluginDescriptors/
 *.jks.old
 *.pepk
 *.aab
+.envrc
