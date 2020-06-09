@@ -1,5 +1,7 @@
 object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:4.0.0"
+    const val detektPlugin = "io.gitlab.arturbosch.detekt"
+    const val detektPluginVersion = "1.9.1"
 
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
