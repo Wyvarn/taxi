@@ -60,11 +60,7 @@ android {
     buildTypes {
         forEach {
             it.resValue("string", "google_maps_key", localProperties["googleMapsApiKey"].toString())
-            it.buildConfigField(
-                "String",
-                "APP_CENTER_TOKEN",
-                localProperties["appCenterKey"].toString()
-            )
+            it.resValue("string", "APP_CENTER_TOKEN", localProperties["appCenterKey"].toString())
         }
 
         getByName("debug") {

@@ -12,14 +12,19 @@ class TaxiApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Places.initialize(applicationContext, getString(R.string.google_maps_key))
-        GeoApiContext.Builder().apiKey(getString(R.string.google_maps_key)).build()
+        setupGoogleMaps()
         setupAppCenter(this)
+    }
+
+    private fun setupGoogleMaps() {
+        val googleMapsKey = getString(R.string.google_maps_key)
+        Places.initialize(applicationContext, googleMapsKey)
+        GeoApiContext.Builder().apiKey(googleMapsKey).build()
     }
 
     private fun setupAppCenter(application: Application) {
         AppCenter.start(
-            application, BuildConfig.APP_CENTER_TOKEN,
+            application, getString(R.string.APP_CENTER_TOKEN),
             Analytics::class.java,
             Crashes::class.java
         )
