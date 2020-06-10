@@ -18,6 +18,7 @@ object ViewUtils {
      * @param px [Float]
      * @return [Float]
      */
+    @Suppress("MagicNumber")
     fun pxToDp(px: Float): Float {
         val densityDpi = Resources.getSystem().displayMetrics.densityDpi
         return px / (densityDpi / 160f)
