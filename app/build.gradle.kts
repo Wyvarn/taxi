@@ -1,5 +1,5 @@
 import java.io.FileInputStream
-import java.util.*
+import java.util.Properties
 
 plugins {
     id("com.android.application")
@@ -59,6 +59,7 @@ android {
 
     buildTypes {
         forEach {
+            it.isTestCoverageEnabled = true
             it.resValue("string", "google_maps_key", localProperties["googleMapsApiKey"].toString())
             it.resValue("string", "APP_CENTER_TOKEN", localProperties["appCenterKey"].toString())
         }
