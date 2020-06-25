@@ -1,0 +1,349 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:2:1-23:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e91582ac85404aa3018be096fde1a835/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e170044bd20529be4284b9c3ba08a767/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.core:core-ktx:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b9620c89ebfcf239eff5b0a778041d9e/jetified-core-ktx-1.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:17:1-38:12
+MERGED from [com.microsoft.appcenter:appcenter-analytics:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/21e6728eddfa706769880f2965f2bde3/jetified-appcenter-analytics-3.2.1/AndroidManifest.xml:6:1-15:12
+MERGED from [com.microsoft.appcenter:appcenter-crashes:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/756cc167958b04ed78519304a125e177/jetified-appcenter-crashes-3.2.1/AndroidManifest.xml:6:1-15:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6f68475f47d3a7ab8471e1abcadb6874/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d1cf0131d0df1439c65e105b0a15e76b/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0506b2b5ee482003c4e40f990cd5d48c/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6110d76bec6d2f76cb63032853438788/jetified-play-services-location-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fe787e015ba6299b92eacd255a222fe1/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5706bf34d8a176882b32ee34b77a7e13/jetified-play-services-places-placereport-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b5226e486e1e7b19cafb495a45a56898/lifecycle-extensions-2.1.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0f5fff7785bd2fba0cf6028634301512/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/9ba1a4cf9bbff31b61a0a31f0cf4725e/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f9aac417628be86d526d1239c7706107/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/06cd59480ad69d7f73c499717e92524e/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2883f68bd12264a014a346f6507ce297/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d1b31b2c05681c80285535f3e5891a9a/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/03378c1d8c6c3435e08101745f10c6e8/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/db1a0f2de4fbc32f1f2a1a7ba4760950/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5571f041dfae54d52a7e066059a74580/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2d59f21c89f086ded9c11e2555a1b4d6/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3ebb29e415b3c07f68675de171c9b6dc/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3893f50e4b18d3af78280bd5c0a95d48/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/1f032b93eefdc39657de29f2c83e3601/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/90a7fc4b7fc71438210ebc3ee7d2751a/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/86477ffe1e6f0aacda012da41963c347/core-1.2.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/c16d2ca31774a54026b2f71cb4f0acc4/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:15:1-41:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f441bb5116bf7d72ab994e04db008123/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/cea6365a7a3bbc4faa999837c950e8ea/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2b794b8514ed5a076d837af5bdd81ab0/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/43e7d54cc36a13a1f7ee2a8bd6c976da/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/1c186ac47efdf020d1451f48137da808/lifecycle-livedata-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/44e101d07d9008e60c6020e2a4c7acf1/lifecycle-livedata-core-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3acb10f7f0823ebaa988637f4bb92fb0/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/a087c51bd072dd5d9c879284708c0c0a/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/c29984714bfaa9e60839bd7822de1bcb/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/8c47f92dfeb2ca83649f039d208b0491/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f6cb2b7f713b7974f1c541799937ba1f/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fa130f20e1fb6146a70a43d5ea3d62ba/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/7bf389e8ef8130430f1d47d46682e608/jetified-volley-1.1.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.datatransport:transport-api:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0cd0c43bbe16f2c894d4dbaa4072ce10/jetified-transport-api-2.1.0/AndroidManifest.xml:15:1-22:12
+MERGED from [com.microsoft.appcenter:appcenter:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/ed669f600885fcdd30ad71e9725d1eee/jetified-appcenter-3.2.1/AndroidManifest.xml:6:1-18:12
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+	package
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:2:5-28
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:1-31:12
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:26:5-67
+MERGED from [com.microsoft.appcenter:appcenter:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/ed669f600885fcdd30ad71e9725d1eee/jetified-appcenter-3.2.1/AndroidManifest.xml:15:5-67
+MERGED from [com.microsoft.appcenter:appcenter:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/ed669f600885fcdd30ad71e9725d1eee/jetified-appcenter-3.2.1/AndroidManifest.xml:15:5-67
+	android:name
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:9:5-79
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:5:22-76
+application
+ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:7:5-30:19
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:13:5-21:19
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:13:5-21:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e170044bd20529be4284b9c3ba08a767/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e170044bd20529be4284b9c3ba08a767/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6110d76bec6d2f76cb63032853438788/jetified-play-services-location-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6110d76bec6d2f76cb63032853438788/jetified-play-services-location-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fe787e015ba6299b92eacd255a222fe1/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fe787e015ba6299b92eacd255a222fe1/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5706bf34d8a176882b32ee34b77a7e13/jetified-play-services-places-placereport-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5706bf34d8a176882b32ee34b77a7e13/jetified-play-services-places-placereport-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b5226e486e1e7b19cafb495a45a56898/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b5226e486e1e7b19cafb495a45a56898/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.core:core:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/86477ffe1e6f0aacda012da41963c347/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/86477ffe1e6f0aacda012da41963c347/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f441bb5116bf7d72ab994e04db008123/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f441bb5116bf7d72ab994e04db008123/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+MERGED from [com.android.volley:volley:1.1.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/7bf389e8ef8130430f1d47d46682e608/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/7bf389e8ef8130430f1d47d46682e608/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/86477ffe1e6f0aacda012da41963c347/core-1.2.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:11:9-41
+	android:roundIcon
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:12:9-54
+	android:icon
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:14:9-40
+	android:name
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:8:9-32
+meta-data#com.google.android.geo.API_KEY
+ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:16:9-18:55
+	android:value
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:18:13-52
+	android:name
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml:17:13-58
+uses-sdk
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:7:5-44
+MERGED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:7:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e91582ac85404aa3018be096fde1a835/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e91582ac85404aa3018be096fde1a835/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e170044bd20529be4284b9c3ba08a767/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e170044bd20529be4284b9c3ba08a767/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b9620c89ebfcf239eff5b0a778041d9e/jetified-core-ktx-1.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b9620c89ebfcf239eff5b0a778041d9e/jetified-core-ktx-1.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.microsoft.appcenter:appcenter-analytics:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/21e6728eddfa706769880f2965f2bde3/jetified-appcenter-analytics-3.2.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter-analytics:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/21e6728eddfa706769880f2965f2bde3/jetified-appcenter-analytics-3.2.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter-crashes:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/756cc167958b04ed78519304a125e177/jetified-appcenter-crashes-3.2.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter-crashes:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/756cc167958b04ed78519304a125e177/jetified-appcenter-crashes-3.2.1/AndroidManifest.xml:11:5-13:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6f68475f47d3a7ab8471e1abcadb6874/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6f68475f47d3a7ab8471e1abcadb6874/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d1cf0131d0df1439c65e105b0a15e76b/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d1cf0131d0df1439c65e105b0a15e76b/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0506b2b5ee482003c4e40f990cd5d48c/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0506b2b5ee482003c4e40f990cd5d48c/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6110d76bec6d2f76cb63032853438788/jetified-play-services-location-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/6110d76bec6d2f76cb63032853438788/jetified-play-services-location-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fe787e015ba6299b92eacd255a222fe1/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fe787e015ba6299b92eacd255a222fe1/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5706bf34d8a176882b32ee34b77a7e13/jetified-play-services-places-placereport-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5706bf34d8a176882b32ee34b77a7e13/jetified-play-services-places-placereport-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b5226e486e1e7b19cafb495a45a56898/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/b5226e486e1e7b19cafb495a45a56898/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0f5fff7785bd2fba0cf6028634301512/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0f5fff7785bd2fba0cf6028634301512/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/9ba1a4cf9bbff31b61a0a31f0cf4725e/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/9ba1a4cf9bbff31b61a0a31f0cf4725e/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f9aac417628be86d526d1239c7706107/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f9aac417628be86d526d1239c7706107/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/06cd59480ad69d7f73c499717e92524e/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/06cd59480ad69d7f73c499717e92524e/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2883f68bd12264a014a346f6507ce297/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2883f68bd12264a014a346f6507ce297/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d1b31b2c05681c80285535f3e5891a9a/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d1b31b2c05681c80285535f3e5891a9a/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/03378c1d8c6c3435e08101745f10c6e8/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/03378c1d8c6c3435e08101745f10c6e8/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/db1a0f2de4fbc32f1f2a1a7ba4760950/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/db1a0f2de4fbc32f1f2a1a7ba4760950/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5571f041dfae54d52a7e066059a74580/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/5571f041dfae54d52a7e066059a74580/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2d59f21c89f086ded9c11e2555a1b4d6/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2d59f21c89f086ded9c11e2555a1b4d6/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3ebb29e415b3c07f68675de171c9b6dc/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3ebb29e415b3c07f68675de171c9b6dc/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3893f50e4b18d3af78280bd5c0a95d48/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3893f50e4b18d3af78280bd5c0a95d48/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/1f032b93eefdc39657de29f2c83e3601/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/1f032b93eefdc39657de29f2c83e3601/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/90a7fc4b7fc71438210ebc3ee7d2751a/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/90a7fc4b7fc71438210ebc3ee7d2751a/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/86477ffe1e6f0aacda012da41963c347/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/86477ffe1e6f0aacda012da41963c347/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/c16d2ca31774a54026b2f71cb4f0acc4/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/c16d2ca31774a54026b2f71cb4f0acc4/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f441bb5116bf7d72ab994e04db008123/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f441bb5116bf7d72ab994e04db008123/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/cea6365a7a3bbc4faa999837c950e8ea/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/cea6365a7a3bbc4faa999837c950e8ea/jetified-lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2b794b8514ed5a076d837af5bdd81ab0/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/2b794b8514ed5a076d837af5bdd81ab0/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/43e7d54cc36a13a1f7ee2a8bd6c976da/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/43e7d54cc36a13a1f7ee2a8bd6c976da/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/1c186ac47efdf020d1451f48137da808/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/1c186ac47efdf020d1451f48137da808/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/44e101d07d9008e60c6020e2a4c7acf1/lifecycle-livedata-core-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/44e101d07d9008e60c6020e2a4c7acf1/lifecycle-livedata-core-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3acb10f7f0823ebaa988637f4bb92fb0/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/3acb10f7f0823ebaa988637f4bb92fb0/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/a087c51bd072dd5d9c879284708c0c0a/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/a087c51bd072dd5d9c879284708c0c0a/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/c29984714bfaa9e60839bd7822de1bcb/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/c29984714bfaa9e60839bd7822de1bcb/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/8c47f92dfeb2ca83649f039d208b0491/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/8c47f92dfeb2ca83649f039d208b0491/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f6cb2b7f713b7974f1c541799937ba1f/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f6cb2b7f713b7974f1c541799937ba1f/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fa130f20e1fb6146a70a43d5ea3d62ba/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/fa130f20e1fb6146a70a43d5ea3d62ba/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/7bf389e8ef8130430f1d47d46682e608/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/7bf389e8ef8130430f1d47d46682e608/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.google.android.datatransport:transport-api:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0cd0c43bbe16f2c894d4dbaa4072ce10/jetified-transport-api-2.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/0cd0c43bbe16f2c894d4dbaa4072ce10/jetified-transport-api-2.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.microsoft.appcenter:appcenter:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/ed669f600885fcdd30ad71e9725d1eee/jetified-appcenter-3.2.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.microsoft.appcenter:appcenter:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/ed669f600885fcdd30ad71e9725d1eee/jetified-appcenter-3.2.1/AndroidManifest.xml:11:5-13:41
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+		ADDED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lusinabrian/Projects/Android/taxi/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:10:5-76
+	android:name
+		ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:10:22-73
+activity#com.google.android.libraries.places.widget.AutocompleteActivity
+ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:14:9-20:20
+	android:label
+		ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:17:13-62
+	android:windowSoftInputMode
+		ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:19:13-55
+	android:exported
+		ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:16:13-37
+	android:theme
+		ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:18:13-61
+	android:name
+		ADDED from [com.google.android.libraries.places:places:2.2.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e2cf38e4da80005604aa228fcc2005ad/jetified-places-2.2.0/AndroidManifest.xml:15:13-91
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:22:5-79
+MERGED from [com.microsoft.appcenter:appcenter:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/ed669f600885fcdd30ad71e9725d1eee/jetified-appcenter-3.2.1/AndroidManifest.xml:16:5-79
+MERGED from [com.microsoft.appcenter:appcenter:3.2.1] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/ed669f600885fcdd30ad71e9725d1eee/jetified-appcenter-3.2.1/AndroidManifest.xml:16:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:23:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/f24713a4976004fd2b0870753f2373b3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/afbf3f7bdad59f447e452ffc669f19de/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/acc694cdf14da74dc56ad7ea2da7754c/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/d2f18635775c0176235ca8e1a16e8cbc/jetified-transport-backend-cct-2.1.0/AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/bfed1ed83a1b9da0fee45de7276f45d3/jetified-transport-runtime-2.1.0/AndroidManifest.xml:33:13-132
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/lusinabrian/.gradle/caches/transforms-2/files-2.1/e703770e00ce352d2cb7b59480d528b1/jetified-lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
