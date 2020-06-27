@@ -40,4 +40,9 @@ object Libs {
         const val analytics = "com.microsoft.appcenter:appcenter-analytics:$appCenterSdkVersion"
         const val crashes = "com.microsoft.appcenter:appcenter-crashes:$appCenterSdkVersion"
     }
+
+    object DI {
+        const val javaxInject = "javax.inject:javax.inject:1"
+        const val javaxAnnotation = "javax.annotation:jsr250-api:1.0"
+    }
 }
