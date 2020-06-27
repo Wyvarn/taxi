@@ -5,6 +5,10 @@ object Libs {
     const val jacocoPluginVersion = "0.8.5"
     const val jacocoPlugin = "org.jacoco:org.jacoco.core:$jacocoPluginVersion"
 
+    object Tools {
+        const val detektFormatter = "io.gitlab.arturbosch.detekt:detekt-formatting:$detektPluginVersion"
+    }
+
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
         const val coreKtx = "androidx.core:core-ktx:1.2.0"

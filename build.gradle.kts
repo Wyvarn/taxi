@@ -176,6 +176,10 @@ subprojects {
             mask = "*.kt"
         }
     }
+
+    dependencies {
+        detektPlugins(Libs.Tools.detektFormatter)
+    }
 }
 
 tasks.register("clean", Delete::class) {
