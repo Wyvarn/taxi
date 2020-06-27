@@ -6,7 +6,8 @@ object Libs {
     const val jacocoPlugin = "org.jacoco:org.jacoco.core:$jacocoPluginVersion"
 
     object Tools {
-        const val detektFormatter = "io.gitlab.arturbosch.detekt:detekt-formatting:$detektPluginVersion"
+        const val detektFormatter =
+            "io.gitlab.arturbosch.detekt:detekt-formatting:$detektPluginVersion"
     }
 
     object AndroidX {
@@ -14,6 +15,7 @@ object Libs {
         const val coreKtx = "androidx.core:core-ktx:1.2.0"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:2.1.0"
+
         object Test {
             const val espressoCore = "androidx.test.espresso:espresso-core:3.2.0"
             const val jUnit = "androidx.test.ext:junit:1.1.1"
@@ -48,5 +50,9 @@ object Libs {
     object DI {
         const val javaxInject = "javax.inject:javax.inject:1"
         const val javaxAnnotation = "javax.annotation:jsr250-api:1.0"
+        private const val koinVersion = "2.1.5"
+        const val koinAndroid = "org.koin:koin-android:$koinVersion"
+        const val koinAndroidXScope = "org.koin:koin-androidx-scope:$koinVersion"
+        const val koinAndroidXViewModel = "org.koin:koin-androidx-viewmodel:$koinVersion"
     }
 }

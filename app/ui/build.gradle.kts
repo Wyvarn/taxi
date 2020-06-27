@@ -1,5 +1,5 @@
 import java.io.FileInputStream
-import java.util.Properties
+import java.util.*
 
 plugins {
     id("com.android.application")
@@ -108,6 +108,10 @@ dependencies {
 
     implementation(Libs.AppCenter.analytics)
     implementation(Libs.AppCenter.crashes)
+
+    implementation(Libs.DI.koinAndroid)
+    implementation(Libs.DI.koinAndroidXScope)
+    implementation(Libs.DI.koinAndroidXViewModel)
 
     testImplementation(Libs.Test.jUnitJupiter)
     testImplementation(Libs.Test.jUnitJupiterApi)

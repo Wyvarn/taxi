@@ -9,7 +9,7 @@ import com.ride.taxi.presenter.BaseView
  */
 interface MapsContract {
 
-    interface View : BaseView<Presenter> {
+    interface View : BaseView {
 
         fun showNearbyCabs(latLngList: List<Pair<Double, Double>>)
 
@@ -32,7 +32,7 @@ interface MapsContract {
         fun showDirectionApiFailedError(error: String)
     }
 
-    interface Presenter : BasePresenter {
+    interface Presenter<V : View> : BasePresenter<V> {
         /**
          * Requests for nearby cabs
          * @param latitude [Double]

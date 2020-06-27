@@ -5,11 +5,11 @@ package com.ride.taxi.presenter
  * @Notes Base View that will act as a base for any class that is to take the role of the BaseView
  * in the Model-BaseView-Presenter pattern
  */
-interface BaseView<in T : BasePresenter> {
-
+interface BaseView {
     /**
-     * Sets the presenter for the view
-     * @param presenter [T] Presenter which implements the [BasePresenter]
+     * Checks if there is network connected
+     * Returns True if the device is connected to a network, false otherwise
+     * @return [Boolean]
      */
-    fun setPresenter(presenter: T)
+    val isNetworkConnected: Boolean
 }

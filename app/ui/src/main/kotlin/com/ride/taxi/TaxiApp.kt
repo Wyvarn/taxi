@@ -6,6 +6,9 @@ import com.google.maps.GeoApiContext
 import com.microsoft.appcenter.AppCenter
 import com.microsoft.appcenter.analytics.Analytics
 import com.microsoft.appcenter.crashes.Crashes
+import com.ride.taxi.di.presenterModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
 class TaxiApp : Application() {
 
@@ -13,6 +16,7 @@ class TaxiApp : Application() {
         super.onCreate()
         setupGoogleMaps()
         setupAppCenter(this)
+        setupDi()
     }
 
     private fun setupGoogleMaps() {
@@ -27,5 +31,12 @@ class TaxiApp : Application() {
             Analytics::class.java,
             Crashes::class.java
         )
+    }
+
+    private fun setupDi() {
+        startKoin {
+            androidContext(this@TaxiApp)
+            modules(presenterModule)
+        }
     }
 }

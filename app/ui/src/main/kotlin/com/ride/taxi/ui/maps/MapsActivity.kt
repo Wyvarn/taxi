@@ -6,15 +6,15 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.ride.taxi.R
 import com.ride.taxi.presenter.maps.MapsContract
+import org.koin.android.ext.android.inject
 
-class MapsActivity : AppCompatActivity(), MapsContract.View, OnMapReadyCallback {
+class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback {
+    val mapsPresenter: MapsContract.Presenter<MapsContract.View> by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-    }
-
-    override fun setPresenter(presenter: MapsContract.Presenter) {
+        mapsPresenter.onAttach(this)
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
