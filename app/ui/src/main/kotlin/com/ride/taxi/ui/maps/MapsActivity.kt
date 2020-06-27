@@ -4,26 +4,32 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.model.LatLng
 import com.ride.taxi.R
+import com.ride.taxi.presenter.maps.MapsContract
 
-class MapsActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), MapsContract.View, OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
     }
 
-    override fun showNearbyCabs(latLngList: List<LatLng>) {
+    override fun setPresenter(presenter: MapsContract.Presenter) {
+    }
+
+    override fun onMapReady(googleMap: GoogleMap?) {
+    }
+
+    override fun showNearbyCabs(latLngList: List<Pair<Double, Double>>) {
     }
 
     override fun informCabBooked() {
     }
 
-    override fun showPath(latLngList: List<LatLng>) {
+    override fun showPath(latLngList: List<Pair<Double, Double>>) {
     }
 
-    override fun updateCabLocation(latLng: LatLng) {
+    override fun updateCabLocation(latitude: Double, longitude: Double) {
     }
 
     override fun informCabIsArriving() {
@@ -42,8 +48,5 @@ class MapsActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
     }
 
     override fun showDirectionApiFailedError(error: String) {
-    }
-
-    override fun onMapReady(googleMap: GoogleMap?) {
     }
 }

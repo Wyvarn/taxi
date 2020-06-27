@@ -1,4 +1,4 @@
-package com.ride.taxi.presentation
+package com.ride.taxi.presenter
 
 /**
  * @author lusinabrian on 27/06/20.

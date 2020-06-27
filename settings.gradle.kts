@@ -3,7 +3,7 @@ rootProject.buildFileName = "build.gradle.kts"
 
 include(
     "app:ui",
-    "app:presentation",
+    "app:presenter",
     "domain",
     "data",
     "remote"
