@@ -1,10 +1,20 @@
 package com.ride.taxi.ui.maps
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Looper
+import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.widget.Toast
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -20,7 +30,9 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.ride.taxi.R
 import com.ride.taxi.presenter.maps.MapsContract
 import com.ride.taxi.ui.BaseActivity
+import com.ride.taxi.utils.PermissionUtils
 import com.ride.taxi.utils.ViewUtils
+import com.ride.taxi.utils.showAlertDialog
 import kotlinx.android.synthetic.main.activity_maps.*
 import org.koin.android.ext.android.inject
 
@@ -40,6 +52,9 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
     private var movingCabMarker: Marker? = null
     private var currentLatLng: LatLng? = null
 
+    private var fusedLocationProviderClient: FusedLocationProviderClient? = null
+    private lateinit var locationCallback: LocationCallback
+
     companion object {
         private const val LOCATION_PERMISSION_REQUEST_CODE = 999
         private const val PICKUP_REQUEST_CODE = 1
@@ -58,44 +73,29 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
 
     override fun onStart() {
         super.onStart()
-    }
-
-    override fun onClick(v: View?) {
-        when (v) {
-            pickUpTextView -> {
-                mapsPresenter.launchLocationAutocompleteActivity(PICKUP_REQUEST_CODE)
-            }
-
-            dropTextView -> {
-                mapsPresenter.launchLocationAutocompleteActivity(DROP_REQUEST_CODE)
-            }
-
-            requestCabButton -> {
-                statusTextView.visibility = View.VISIBLE
-                statusTextView.text = getString(R.string.requesting_your_cab)
-                requestCabButton.isEnabled = false
-                pickUpTextView.isEnabled = false
-                dropTextView.isEnabled = false
-                mapsPresenter.requestCab(
-                    pickupLatitude = pickUpLatLng?.latitude!!,
-                    pickupLongitude = pickUpLatLng?.longitude!!,
-                    dropLatitude = dropLatLng?.latitude!!,
-                    dropLongitude = dropLatLng?.longitude!!
-                )
-            }
-
-            nextRideButton -> {
-                mapsPresenter.onReset()
+        if (currentLatLng == null) {
+            when {
+                PermissionUtils.isPermissionGranted(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) -> {
+                    when {
+                        PermissionUtils.isLocationEnabled(this) -> {
+                            mapsPresenter.onSetupLocationListener()
+                        }
+                        else -> {
+                            showAlertDialog(
+                                this,
+                                title = getString(R.string.enable_gps),
+                                message = getString(R.string.required_for_this_app),
+                                positiveButtonTxt = getString(R.string.enable_now),
+                                action = { mapsPresenter.onOpenLocationSettingsActivity() }
+                            )
+                        }
+                    }
+                }
             }
         }
-    }
-
-    override fun launchLocationAutocompleteActivity(requestCode: Int) {
-        val fields: List<Place.Field> =
-            listOf(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG)
-        val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
-            .build(this)
-        startActivityForResult(intent, requestCode)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -128,6 +128,78 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                 }
             }
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            LOCATION_PERMISSION_REQUEST_CODE -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    when {
+                        PermissionUtils.isLocationEnabled(this) -> {
+                            mapsPresenter.onSetupLocationListener()
+                        }
+                        else -> {
+                            showAlertDialog(
+                                this,
+                                title = getString(R.string.enable_gps),
+                                message = getString(R.string.required_for_this_app),
+                                positiveButtonTxt = getString(R.string.enable_now),
+                                action = { mapsPresenter.onOpenLocationSettingsActivity() }
+                            )
+                        }
+                    }
+                } else {
+                    Toast.makeText(
+                        this,
+                        getString(R.string.location_permission_not_granted),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when (v) {
+            pickUpTextView -> {
+                mapsPresenter.launchLocationAutocompleteActivity(PICKUP_REQUEST_CODE)
+            }
+
+            dropTextView -> {
+                mapsPresenter.launchLocationAutocompleteActivity(DROP_REQUEST_CODE)
+            }
+
+            requestCabButton -> {
+                statusTextView.visibility = View.VISIBLE
+                statusTextView.text = getString(R.string.requesting_your_cab)
+                requestCabButton.isEnabled = false
+                pickUpTextView.isEnabled = false
+                dropTextView.isEnabled = false
+                mapsPresenter.onRequestCab(
+                    pickupLatitude = pickUpLatLng?.latitude!!,
+                    pickupLongitude = pickUpLatLng?.longitude!!,
+                    dropLatitude = dropLatLng?.latitude!!,
+                    dropLongitude = dropLatLng?.longitude!!
+                )
+            }
+
+            nextRideButton -> {
+                mapsPresenter.onReset()
+            }
+        }
+    }
+
+    override fun launchLocationAutocompleteActivity(requestCode: Int) {
+        val fields: List<Place.Field> =
+            listOf(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG)
+        val intent = Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
+            .build(this)
+        startActivityForResult(intent, requestCode)
     }
 
     override fun showRequestButton() {
@@ -181,6 +253,80 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
     override fun setCurrentLocationAsPickup() {
         pickUpLatLng = currentLatLng
         pickUpTextView.text = getString(R.string.current_location)
+    }
+
+    override fun openLocationSettingsActivity() {
+        startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+    }
+
+    @SuppressLint("MissingPermission")
+    override fun setupLocationListener() {
+        fusedLocationProviderClient = FusedLocationProviderClient(this)
+        // for getting the current location update after every 2 seconds
+        @Suppress("MagicNumber")
+        val locationRequest = LocationRequest().setInterval(2000).setFastestInterval(2000)
+            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult) {
+                super.onLocationResult(locationResult)
+                if (currentLatLng == null) {
+                    for (location in locationResult.locations) {
+                        if (currentLatLng == null) {
+                            currentLatLng = LatLng(location.latitude, location.longitude)
+                            mapsPresenter.onSetCurrentLocationAsPickup()
+                            mapsPresenter.onEnableMyLocationOnMap()
+                            mapsPresenter.onMoveCamera(
+                                currentLatLng?.longitude!!,
+                                currentLatLng?.latitude!!
+                            )
+                            mapsPresenter.onAnimateCamera(
+                                currentLatLng?.longitude!!,
+                                currentLatLng?.latitude!!
+                            )
+                            mapsPresenter.onRequestNearbyCabs(
+                                currentLatLng!!.latitude,
+                                currentLatLng?.longitude!!
+                            )
+                        }
+                    }
+                }
+                // Few more things we can do here:
+                // For example: Update the location of user on server
+            }
+        }
+        if (!PermissionUtils.isPermissionGranted(this, Manifest.permission.ACCESS_FINE_LOCATION) &&
+            !PermissionUtils.isPermissionGranted(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+
+        fusedLocationProviderClient?.requestLocationUpdates(
+            locationRequest,
+            locationCallback,
+            Looper.myLooper()
+        )
+    }
+
+    @SuppressLint("MissingPermission")
+    override fun enableMyLocationOnMap() {
+        @Suppress("MagicNumber")
+        googleMap.setPadding(0, ViewUtils.dpToPx(48f), 0, 0)
+        googleMap.isMyLocationEnabled = !(!PermissionUtils.isPermissionGranted(
+            this,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) &&
+                !PermissionUtils.isPermissionGranted(
+                    this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                ))
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

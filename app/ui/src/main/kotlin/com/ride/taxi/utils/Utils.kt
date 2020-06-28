@@ -18,7 +18,7 @@ import androidx.appcompat.app.AlertDialog
  * @param cancelable [Boolean] Whether the dialog is cancelable
  */
 @Suppress("LongParameterList")
-fun showDialog(
+fun showAlertDialog(
     context: Context,
     title: String,
     message: String,

@@ -34,7 +34,7 @@ class MapsPresenterImpl<V : MapsContract.View> : MapsContract.Presenter<V>, Base
 //        webSocket.sendMessage(jsonObject.toString())
     }
 
-    override fun requestCab(
+    override fun onRequestCab(
         pickupLatitude: Double,
         pickupLongitude: Double,
         dropLatitude: Double,
@@ -64,6 +64,18 @@ class MapsPresenterImpl<V : MapsContract.View> : MapsContract.Presenter<V>, Base
 
     override fun onSetCurrentLocationAsPickup() {
         baseView.setCurrentLocationAsPickup()
+    }
+
+    override fun onOpenLocationSettingsActivity() {
+        baseView.openLocationSettingsActivity()
+    }
+
+    override fun onSetupLocationListener() {
+        baseView.setupLocationListener()
+    }
+
+    override fun onEnableMyLocationOnMap() {
+        baseView.enableMyLocationOnMap()
     }
 
     override fun onConnect() {

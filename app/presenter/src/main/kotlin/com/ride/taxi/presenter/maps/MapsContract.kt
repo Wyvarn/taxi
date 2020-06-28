@@ -45,6 +45,21 @@ interface MapsContract {
          */
         fun setCurrentLocationAsPickup()
 
+        /**
+         * Instructs view to open location settings
+         */
+        fun openLocationSettingsActivity()
+
+        /**
+         * setup location listener
+         */
+        fun setupLocationListener()
+
+        /**
+         * Enables user's location on map
+         */
+        fun enableMyLocationOnMap()
+
         fun showNearbyCabs(latLngList: List<Pair<Double, Double>>)
 
         fun informCabBooked()
@@ -99,7 +114,7 @@ interface MapsContract {
          * @param dropLatitude Drop-off latitude
          * @param dropLongitude Drop-off Longitude
          */
-        fun requestCab(
+        fun onRequestCab(
             pickupLatitude: Double,
             pickupLongitude: Double,
             dropLatitude: Double,
@@ -124,6 +139,21 @@ interface MapsContract {
          * Sets the current location as pickup
          */
         fun onSetCurrentLocationAsPickup()
+
+        /**
+         * Instructs view to open location settings
+         */
+        fun onOpenLocationSettingsActivity()
+
+        /**
+         * Instructs view to setup location listener
+         */
+        fun onSetupLocationListener()
+
+        /**
+         * Instructs View to enable user's location on map
+         */
+        fun onEnableMyLocationOnMap()
 
         /**
          * Handles connection events from WebSocket. Clients can now open communication to WebSocket
