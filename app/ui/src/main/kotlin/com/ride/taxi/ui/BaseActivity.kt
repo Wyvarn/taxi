@@ -1,4 +1,4 @@
-package com.ride.taxi.ui.maps
+package com.ride.taxi.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import com.ride.taxi.presenter.BaseView

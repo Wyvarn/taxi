@@ -1,11 +1,11 @@
 package com.ride.taxi.ui.maps
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.ride.taxi.R
 import com.ride.taxi.presenter.maps.MapsContract
+import com.ride.taxi.ui.BaseActivity
 import org.koin.android.ext.android.inject
 
 class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback {

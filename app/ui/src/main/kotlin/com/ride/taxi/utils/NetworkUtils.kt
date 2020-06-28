@@ -2,8 +2,7 @@ package com.ride.taxi.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkRequest
+import android.net.NetworkCapabilities
 import android.os.Build
 
 /**
@@ -14,22 +13,27 @@ import android.os.Build
 /**
  * Method to check network availability
  * Using ConnectivityManager to check for IsNetwork Connection
+ * @param context [Context] Context to run connectivity check
+ * @return [Boolean] true if network is available, false otherwise
  */
+@Suppress("ReturnCount")
 fun isNetworkAvailable(context: Context): Boolean {
     val connectivityManager =
         context.applicationContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    val activeNetwork = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        connectivityManager.registerNetworkCallback(
-            object : NetworkRequest() {
 
-            },
-            object : ConnectivityManager.NetworkCallback() {
-                override fun onAvailable(network: Network) {
-                    super.onAvailable(network)
-                }
-            })
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        val network = connectivityManager.activeNetwork ?: return false
+        val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return when {
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+            else -> false
+        }
     } else {
-        connectivityManager.activeNetworkInfo
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = cm.activeNetworkInfo
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting
     }
-    return activeNetwork != null && activeNetwork.isConnectedOrConnecting
 }
