@@ -10,6 +10,40 @@ import com.ride.taxi.presenter.BaseView
 interface MapsContract {
 
     interface View : BaseView {
+        /**
+         * Launchers Auto Complete Activity given the request code
+         * @param requestCode [Int]
+         */
+        fun launchLocationAutocompleteActivity(requestCode: Int)
+
+        /**
+         * Sets the Pickup location
+         */
+        fun showRequestButton()
+
+        /**
+         * Resets view
+         */
+        fun resetView()
+
+        /**
+         * Moves camera to new longitude & latitude
+         * @param longitude [Double]
+         * @param latitude [Double]
+         */
+        fun moveCameraView(longitude: Double, latitude: Double)
+
+        /**
+         * Animates camera to new longitude & latitude
+         * @param longitude [Double]
+         * @param latitude [Double]
+         */
+        fun animateCameraView(longitude: Double, latitude: Double)
+
+        /**
+         * Sets the current location as pickup
+         */
+        fun setCurrentLocationAsPickup()
 
         fun showNearbyCabs(latLngList: List<Pair<Double, Double>>)
 
@@ -33,12 +67,29 @@ interface MapsContract {
     }
 
     interface Presenter<V : View> : BasePresenter<V> {
+
+        /**
+         * Launches Auto Complete Activity
+         * @param requestCode [Int]
+         */
+        fun launchLocationAutocompleteActivity(requestCode: Int)
+
+        /**
+         * Sets visibility of request button
+         */
+        fun showRequestButton()
+
+        /**
+         * Resets the view
+         */
+        fun onReset()
+
         /**
          * Requests for nearby cabs
          * @param latitude [Double]
          * @param longitude [Double]
          */
-        fun requestNearbyCabs(latitude: Double, longitude: Double)
+        fun onRequestNearbyCabs(latitude: Double, longitude: Double)
 
         /**
          * Requests for a cab from pickup location to drop-off location
@@ -54,6 +105,25 @@ interface MapsContract {
             dropLatitude: Double,
             dropLongitude: Double
         )
+
+        /**
+         * Instructs view to move camera to new longitude & latitude
+         * @param longitude [Double]
+         * @param latitude [Double]
+         */
+        fun onMoveCamera(longitude: Double, latitude: Double)
+
+        /**
+         * Instructs view to animate camera to new longitude & latitude
+         * @param longitude [Double]
+         * @param latitude [Double]
+         */
+        fun onAnimateCamera(longitude: Double, latitude: Double)
+
+        /**
+         * Sets the current location as pickup
+         */
+        fun onSetCurrentLocationAsPickup()
 
         /**
          * Handles connection events from WebSocket. Clients can now open communication to WebSocket
