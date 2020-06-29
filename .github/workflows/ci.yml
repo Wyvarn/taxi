@@ -13,15 +13,15 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     env:
-      APP_CENTER_TOKEN: ${{ APP_CENTER_TOKEN }}
-      GOOGLE_MAPS_KEY: ${{ GOOGLE_MAPS_KEY }}
-      DEBUG_KEY_ALIAS: ${{ $DEBUG_KEY_ALIAS }}
-      DEBUG_KEY_PASS: ${{ DEBUG_KEY_PASS }}
-      DEBUG_KEY_STORE_PASS: ${{ DEBUG_KEY_STORE_PASS }}
-      RELEASE_KEY_ALIAS: ${{ RELEASE_KEY_ALIAS }}
-      RELEASE_KEY_PASS: ${{ RELEASE_KEY_PASS }}
-      RELEASE_KEY_STORE_PASS: ${{ RELEASE_KEY_STORE_PASS }}
-      RELEASE_KEY_STORE_FILE: ${{ RELEASE_KEY_STORE_FILE }}
+      APP_CENTER_TOKEN: ${{ secrets.APP_CENTER_TOKEN }}
+      GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      DEBUG_KEY_ALIAS: ${{ secrets.DEBUG_KEY_ALIAS }}
+      DEBUG_KEY_PASS: ${{ secrets.DEBUG_KEY_PASS }}
+      DEBUG_KEY_STORE_PASS: ${{ secrets.DEBUG_KEY_STORE_PASS }}
+#      RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+#      RELEASE_KEY_PASS: ${{ secrets.RELEASE_KEY_PASS }}
+#      RELEASE_KEY_STORE_PASS: ${{ secrets.RELEASE_KEY_STORE_PASS }}
+#      RELEASE_KEY_STORE_FILE: ${{ RELEASE_KEY_STORE_FILE }}
 
     strategy:
       matrix:
