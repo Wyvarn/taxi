@@ -77,7 +77,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Check linting with Detekt
+      - name: Check linting
         run: |
           ./gradlew lint
           ./gradlew detekt

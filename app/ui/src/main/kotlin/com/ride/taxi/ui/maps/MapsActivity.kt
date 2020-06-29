@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
@@ -21,8 +22,10 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.Polyline
+import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
@@ -30,10 +33,15 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.ride.taxi.R
 import com.ride.taxi.presenter.maps.MapsContract
 import com.ride.taxi.ui.BaseActivity
+import com.ride.taxi.utils.AnimationUtils
 import com.ride.taxi.utils.PermissionUtils
 import com.ride.taxi.utils.ViewUtils
 import com.ride.taxi.utils.showAlertDialog
-import kotlinx.android.synthetic.main.activity_maps.*
+import kotlinx.android.synthetic.main.activity_maps.dropTextView
+import kotlinx.android.synthetic.main.activity_maps.nextRideButton
+import kotlinx.android.synthetic.main.activity_maps.pickUpTextView
+import kotlinx.android.synthetic.main.activity_maps.requestCabButton
+import kotlinx.android.synthetic.main.activity_maps.statusTextView
 import org.koin.android.ext.android.inject
 
 class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View.OnClickListener {
@@ -96,6 +104,12 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        mapsPresenter.onDetach()
+        fusedLocationProviderClient?.removeLocationUpdates(locationCallback)
+        super.onDestroy()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -334,12 +348,51 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
     }
 
     override fun showNearbyCabs(latLngList: List<Pair<Double, Double>>) {
+        nearbyCabMarkerList.clear()
+        for (latLng in latLngList) {
+            val nearbyCabMarker =
+                addCarMarkerAndGet(googleMap, this, LatLng(latLng.first, latLng.second))
+            nearbyCabMarkerList.add(nearbyCabMarker)
+        }
     }
 
     override fun informCabBooked() {
+        nearbyCabMarkerList.forEach { it.remove() }
+        nearbyCabMarkerList.clear()
+        requestCabButton.visibility = View.GONE
+        statusTextView.text = getString(R.string.your_cab_is_booked)
     }
 
     override fun showPath(latLngList: List<Pair<Double, Double>>) {
+        val builder = LatLngBounds.Builder()
+        for (latLng in latLngList) {
+            builder.include(LatLng(latLng.first, latLng.second))
+        }
+        val bounds = builder.build()
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 2))
+        val polylineOptions = PolylineOptions()
+        polylineOptions.color(Color.GRAY)
+        polylineOptions.width(5f)
+        polylineOptions.addAll(latLngList)
+        greyPolyLine = googleMap.addPolyline(polylineOptions)
+
+        val blackPolylineOptions = PolylineOptions()
+        blackPolylineOptions.width(5f)
+        blackPolylineOptions.color(Color.BLACK)
+        blackPolyline = googleMap.addPolyline(blackPolylineOptions)
+
+        originMarker = addOriginDestinationMarkerAndGet(googleMap,  latLngList[0])
+        originMarker?.setAnchor(0.5f, 0.5f)
+        destinationMarker = addOriginDestinationMarkerAndGet(googleMap, latLngList[latLngList.size - 1])
+        destinationMarker?.setAnchor(0.5f, 0.5f)
+
+        val polylineAnimator = AnimationUtils.polyLineAnimator()
+        polylineAnimator.addUpdateListener { valueAnimator ->
+            val percentValue = (valueAnimator.animatedValue as Int)
+            val index = (greyPolyLine?.points!!.size * (percentValue / 100.0f)).toInt()
+            blackPolyline?.points = greyPolyLine?.points!!.subList(0, index)
+        }
+        polylineAnimator.start()
     }
 
     override fun updateCabLocation(latitude: Double, longitude: Double) {
@@ -357,9 +410,8 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
     override fun informTripEnd() {
     }
 
-    override fun showRoutesNotAvailableError() {
-    }
-
-    override fun showDirectionApiFailedError(error: String) {
+    override fun showError(error: String) {
+        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+        mapsPresenter.onReset()
     }
 }

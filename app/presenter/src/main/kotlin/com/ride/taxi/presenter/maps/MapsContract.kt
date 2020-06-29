@@ -76,9 +76,11 @@ interface MapsContract {
 
         fun informTripEnd()
 
-        fun showRoutesNotAvailableError()
-
-        fun showDirectionApiFailedError(error: String)
+        /**
+         * Show error
+         * @param error [String]
+         */
+        fun showError(error: String)
     }
 
     interface Presenter<V : View> : BasePresenter<V> {

@@ -1,6 +1,10 @@
 package com.ride.taxi.presenter.maps
 
-import com.ride.taxi.presenter.*
+import com.ride.taxi.presenter.BasePresenterImpl
+import com.ride.taxi.presenter.LAT
+import com.ride.taxi.presenter.LNG
+import com.ride.taxi.presenter.NEAR_BY_CABS
+import com.ride.taxi.presenter.TYPE
 
 /**
  * @author lusinabrian on 27/06/20.
@@ -16,6 +20,7 @@ class MapsPresenterImpl<V : MapsContract.View> : MapsContract.Presenter<V>, Base
     }
 
     override fun onDetach() {
+        // disconnect from websocket
     }
 
     override fun launchLocationAutocompleteActivity(requestCode: Int) {
@@ -79,14 +84,31 @@ class MapsPresenterImpl<V : MapsContract.View> : MapsContract.Presenter<V>, Base
     }
 
     override fun onConnect() {
+        // on web socket connect
     }
 
     override fun onMessage(data: String) {
+        // data
     }
 
     override fun onDisconnect() {
+        // on disconnect
     }
 
     override fun onError(error: String) {
+//        val gson = Gson()
+//        val jsonObject = gson.fromJson(error, String::class)
+//        when (jsonObject.getString(TYPE)) {
+//            ROUTES_NOT_AVAILABLE -> {
+//                baseView.showError("Route Not Available: Choose different pickup and drop location")
+//            }
+//            DIRECTION_API_FAILED -> {
+//                baseView.showError(
+//                    "Direction API Failed : " + jsonObject.getString(
+//                        ERROR
+//                    )
+//                )
+//            }
+//        }
     }
 }
