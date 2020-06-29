@@ -1,14 +1,4 @@
 object Libs {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:4.0.0"
-    const val detektPlugin = "io.gitlab.arturbosch.detekt"
-    const val detektPluginVersion = "1.9.1"
-    const val jacocoPluginVersion = "0.8.5"
-    const val jacocoPlugin = "org.jacoco:org.jacoco.core:$jacocoPluginVersion"
-
-    object Tools {
-        const val detektFormatter =
-            "io.gitlab.arturbosch.detekt:detekt-formatting:$detektPluginVersion"
-    }
 
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
@@ -54,5 +44,9 @@ object Libs {
         const val koinAndroid = "org.koin:koin-android:$koinVersion"
         const val koinAndroidXScope = "org.koin:koin-androidx-scope:$koinVersion"
         const val koinAndroidXViewModel = "org.koin:koin-androidx-viewmodel:$koinVersion"
+    }
+
+    object Utils {
+        const val gson = "com.google.code.gson:gson:2.8.6"
     }
 }

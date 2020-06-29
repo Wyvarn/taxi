@@ -9,6 +9,7 @@ dependencies {
     implementation(Libs.Kotlin.stdlib)
     implementation(Libs.DI.javaxAnnotation)
     implementation(Libs.DI.javaxInject)
+    implementation(Libs.Utils.gson)
 
     testImplementation(Libs.Test.jUnitJupiter)
     testImplementation(Libs.Test.jUnitJupiterApi)

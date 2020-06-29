@@ -7,21 +7,21 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath(Libs.androidGradlePlugin)
-        classpath(Libs.jacocoPlugin)
+        classpath(Plugins.androidGradlePlugin)
+        classpath(Plugins.jacocoPlugin)
         classpath(kotlin("gradle-plugin", version = Versions.Build.kotlinVersion))
     }
 }
 
 plugins {
-    id(Libs.detektPlugin).version(Libs.detektPluginVersion)
+    id(Plugins.detektPlugin).version(Plugins.detektPluginVersion)
     jacoco
 }
 
 apply(from = "githooks.gradle.kts")
 
 allprojects {
-    apply(plugin = Libs.detektPlugin)
+    apply(plugin = Plugins.detektPlugin)
     apply(plugin = "jacoco")
 
     repositories {
@@ -30,7 +30,7 @@ allprojects {
     }
 
     jacoco {
-        toolVersion = Libs.jacocoPluginVersion
+        toolVersion = Plugins.jacocoPluginVersion
     }
 }
 
@@ -148,7 +148,7 @@ subprojects {
     }
 
     detekt {
-        toolVersion = Libs.detektPluginVersion
+        toolVersion = Plugins.detektPluginVersion
         description = "Runs detekt formatter"
         config = files(
             project.rootDir.resolve("config/detekt/detekt.yml"),
@@ -178,7 +178,7 @@ subprojects {
     }
 
     dependencies {
-        detektPlugins(Libs.Tools.detektFormatter)
+        detektPlugins(Plugins.detektFormatter)
     }
 }
 
