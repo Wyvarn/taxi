@@ -1,0 +1,66 @@
+name: Taxi CI
+
+on:
+  push:
+    branches:
+      - feature/*
+      - hotfix/*
+      - fix/*
+  pull_request:
+    branches: [ master, beta, develop ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    env:
+      APP_CENTER_TOKEN: ${{ APP_CENTER_TOKEN }}
+      GOOGLE_MAPS_KEY: ${{ GOOGLE_MAPS_KEY }}
+      DEBUG_KEY_ALIAS: ${{ $DEBUG_KEY_ALIAS }}
+      DEBUG_KEY_PASS: ${{ DEBUG_KEY_PASS }}
+      DEBUG_KEY_STORE_PASS: ${{ DEBUG_KEY_STORE_PASS }}
+      RELEASE_KEY_ALIAS: ${{ RELEASE_KEY_ALIAS }}
+      RELEASE_KEY_PASS: ${{ RELEASE_KEY_PASS }}
+      RELEASE_KEY_STORE_PASS: ${{ RELEASE_KEY_STORE_PASS }}
+      RELEASE_KEY_STORE_FILE: ${{ RELEASE_KEY_STORE_FILE }}
+
+    strategy:
+      matrix:
+        java_version: ["1.8"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: set up JDK ${{ matrix.java_version }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java_version }}
+
+      - name: Setup local.properties
+        run: |
+          touch local.properties
+          echo appCenterKey=$APP_CENTER_TOKEN >> local.properties
+          echo googleMapsKey=$GOOGLE_MAPS_KEY >> local.properties
+
+      - name: Setup keystore.properties
+        run: |
+          touch keystore.properties
+          echo debugKeyAlias=$DEBUG_KEY_ALIAS >> keystore.properties
+          echo debugKeyPass=$DEBUG_KEY_PASS >> keystore.properties
+          echo debugKeyStorePass=$DEBUG_KEY_STORE_PASS >> keystore.properties
+
+          echo releaseKeyAlias=$RELEASE_KEY_ALIAS >> keystore.properties
+          echo releaseKeyPass=$RELEASE_KEY_PASS >> keystore.properties
+          echo releaseKeyStorePass=$RELEASE_KEY_STORE_PASS >> keystore.properties
+          echo releaseKeyStoreFile=$RELEASE_KEY_STORE_FILE >> keystore.properties
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Check linting with Detekt
+        run: |
+          ./gradlew lint
+          ./gradlew detekt
+
+      - name: Test
+        run: ./gradlew test
