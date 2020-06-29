@@ -22,7 +22,7 @@ jobs:
       RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
       RELEASE_KEY_PASS: ${{ secrets.RELEASE_KEY_PASS }}
       RELEASE_KEY_STORE_PASS: ${{ secrets.RELEASE_KEY_STORE_PASS }}
-      RELEASE_KEY_STORE_FILE: ${{ RELEASE_KEY_STORE_FILE }}
+      RELEASE_KEY_STORE_FILE: ${{ secrets.RELEASE_KEY_STORE_FILE }}
 
     strategy:
       matrix:
