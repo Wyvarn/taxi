@@ -1,0 +1,24 @@
+name: Validate Gradle Wrapper
+on:
+  push:
+    branches:
+      - master
+      - beta
+      - develop
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  validaton:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    name: Validation
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout Code repo
+        uses: actions/checkout@v2
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
