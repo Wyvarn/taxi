@@ -2,7 +2,7 @@ name: Github Release
 
 on:
   push:
-    branches: [master, beta]
+    branches: [production, beta]
 
 jobs:
   publish-gpr:

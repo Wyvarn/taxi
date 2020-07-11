@@ -7,7 +7,7 @@ on:
       - hotfix/*
       - fix/*
   pull_request:
-    branches: [ master, beta, develop ]
+    branches: [ production, beta, develop ]
 
 jobs:
   build_and_test:

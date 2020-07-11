@@ -2,7 +2,7 @@ name: Validate Gradle Wrapper
 on:
   push:
     branches:
-      - master
+      - production
       - beta
       - develop
   pull_request:
