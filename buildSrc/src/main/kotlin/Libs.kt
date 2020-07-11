@@ -1,15 +1,11 @@
 object Libs {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:4.0.0"
-    const val detektPlugin = "io.gitlab.arturbosch.detekt"
-    const val detektPluginVersion = "1.9.1"
-    const val jacocoPluginVersion = "0.8.5"
-    const val jacocoPlugin = "org.jacoco:org.jacoco.core:$jacocoPluginVersion"
 
     object AndroidX {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
         const val coreKtx = "androidx.core:core-ktx:1.2.0"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:2.1.0"
+
         object Test {
             const val espressoCore = "androidx.test.espresso:espresso-core:3.2.0"
             const val jUnit = "androidx.test.ext:junit:1.1.1"
@@ -39,5 +35,18 @@ object Libs {
         private const val appCenterSdkVersion = "3.2.1"
         const val analytics = "com.microsoft.appcenter:appcenter-analytics:$appCenterSdkVersion"
         const val crashes = "com.microsoft.appcenter:appcenter-crashes:$appCenterSdkVersion"
+    }
+
+    object DI {
+        const val javaxInject = "javax.inject:javax.inject:1"
+        const val javaxAnnotation = "javax.annotation:jsr250-api:1.0"
+        private const val koinVersion = "2.1.5"
+        const val koinAndroid = "org.koin:koin-android:$koinVersion"
+        const val koinAndroidXScope = "org.koin:koin-androidx-scope:$koinVersion"
+        const val koinAndroidXViewModel = "org.koin:koin-androidx-viewmodel:$koinVersion"
+    }
+
+    object Utils {
+        const val gson = "com.google.code.gson:gson:2.8.6"
     }
 }

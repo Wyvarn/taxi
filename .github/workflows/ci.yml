@@ -1,0 +1,106 @@
+name: Taxi CI
+
+on:
+  push:
+    branches:
+      - feature/*
+      - hotfix/*
+      - fix/*
+  pull_request:
+    branches: [ production, beta, develop ]
+
+jobs:
+  build_and_test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        java_version: ["1.8"]
+
+    runs-on: ${{ matrix.os }}
+    if: ${{ !contains(github.event.head_commit.message, 'ci skip') }}
+    env:
+      APP_CENTER_TOKEN: ${{ secrets.APP_CENTER_TOKEN }}
+      GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      DEBUG_KEY_ALIAS: ${{ secrets.DEBUG_KEY_ALIAS }}
+      DEBUG_KEY_PASS: ${{ secrets.DEBUG_KEY_PASS }}
+      DEBUG_KEY_STORE_PASS: ${{ secrets.DEBUG_KEY_STORE_PASS }}
+      KEY_STORE_URI: ${{ secrets.KEY_STORE_URI }}
+      RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+      RELEASE_KEY_PASS: ${{ secrets.RELEASE_KEY_PASS }}
+      RELEASE_KEY_STORE_PASS: ${{ secrets.RELEASE_KEY_STORE_PASS }}
+      RELEASE_KEY_STORE_FILE: ${{ secrets.RELEASE_KEY_STORE_FILE }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Cache Gradle Cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle/caches/
+          key: cache-gradle-cache
+
+      - name: Cache Gradle Wrapper
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle/wrapper
+          key: cache-gradle-wrapper
+
+      - name: set up JDK ${{ matrix.java_version }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java_version }}
+
+      - name: Get KeyStore file
+        run: |
+          # use curl to download a keystore from $KEYSTORE_URI, if set,
+          # to the path/filename set in $KEYSTORE.
+          echo "Looking for $STORE_FILE_LOCATION ..."
+
+          if [ ! -f ${RELEASE_KEY_STORE_FILE} ] ; then
+              echo "Keystore file is missing, performing download"
+              # we're using curl instead of wget because it will not
+              # expose the sensitive uri in the build logs:
+              curl -L -o ${RELEASE_KEY_STORE_FILE} ${KEY_STORE_URI}
+          else
+                  echo "Keystore uri not set apk artifact will not be signed."
+          fi
+
+      - name: Setup local.properties
+        run: |
+          if [! -f local.properties ]; then
+            touch local.properties
+            echo appCenterKey=$APP_CENTER_TOKEN >> local.properties
+            echo googleMapsKey=$GOOGLE_MAPS_KEY >> local.properties
+          fi
+
+      - name: Setup keystore.properties
+        run: |
+          if [! -f keystore.properties ]; then
+            touch keystore.properties
+            echo debugKeyAlias=$DEBUG_KEY_ALIAS >> keystore.properties
+            echo debugKeyPass=$DEBUG_KEY_PASS >> keystore.properties
+            echo debugKeyStorePass=$DEBUG_KEY_STORE_PASS >> keystore.properties
+
+            echo releaseKeyAlias=$RELEASE_KEY_ALIAS >> keystore.properties
+            echo releaseKeyPass=$RELEASE_KEY_PASS >> keystore.properties
+            echo releaseKeyStorePass=$RELEASE_KEY_STORE_PASS >> keystore.properties
+            echo releaseKeyStoreFile=$RELEASE_KEY_STORE_FILE >> keystore.properties
+          fi
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Check linting
+        run: |
+          ./gradlew lint
+          ./gradlew detekt
+
+      - name: Unit Tests
+        run: ./gradlew test
+
+      - name: Stop Gradle
+        run: ./gradlew --stop

@@ -93,6 +93,7 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(project(":app:presenter"))
 
     implementation(Libs.Kotlin.stdlib)
 
@@ -107,6 +108,10 @@ dependencies {
 
     implementation(Libs.AppCenter.analytics)
     implementation(Libs.AppCenter.crashes)
+
+    implementation(Libs.DI.koinAndroid)
+    implementation(Libs.DI.koinAndroidXScope)
+    implementation(Libs.DI.koinAndroidXViewModel)
 
     testImplementation(Libs.Test.jUnitJupiter)
     testImplementation(Libs.Test.jUnitJupiterApi)
