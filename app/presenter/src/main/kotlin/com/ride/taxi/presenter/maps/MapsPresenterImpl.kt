@@ -20,15 +20,7 @@ class MapsPresenterImpl<V : MapsContract.View> : MapsContract.Presenter<V>, Base
     }
 
     override fun onDetach() {
-        // disconnect from websocket
-    }
-
-    override fun launchLocationAutocompleteActivity(requestCode: Int) {
-        baseView.launchLocationAutocompleteActivity(requestCode)
-    }
-
-    override fun showRequestButton() {
-        baseView.showRequestButton()
+        // disconnect from WebSocket
     }
 
     override fun onRequestNearbyCabs(latitude: Double, longitude: Double) {
@@ -51,36 +43,7 @@ class MapsPresenterImpl<V : MapsContract.View> : MapsContract.Presenter<V>, Base
         jsonObject["pickUpLng"] = pickupLongitude
         jsonObject["dropLat"] = dropLatitude
         jsonObject["dropLng"] = dropLongitude
-        // TODO: send message to web socket
-//        webSocket.sendMessage(jsonObject.toString())
-    }
-
-    override fun onReset() {
-        baseView.resetView()
-    }
-
-    override fun onMoveCamera(longitude: Double, latitude: Double) {
-        baseView.moveCameraView(longitude, latitude)
-    }
-
-    override fun onAnimateCamera(longitude: Double, latitude: Double) {
-        baseView.animateCameraView(longitude, latitude)
-    }
-
-    override fun onSetCurrentLocationAsPickup() {
-        baseView.setCurrentLocationAsPickup()
-    }
-
-    override fun onOpenLocationSettingsActivity() {
-        baseView.openLocationSettingsActivity()
-    }
-
-    override fun onSetupLocationListener() {
-        baseView.setupLocationListener()
-    }
-
-    override fun onEnableMyLocationOnMap() {
-        baseView.enableMyLocationOnMap()
+        // webSocket.sendMessage(jsonObject.toString())
     }
 
     override fun onConnect() {

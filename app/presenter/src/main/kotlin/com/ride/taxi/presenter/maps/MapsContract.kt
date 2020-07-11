@@ -10,55 +10,6 @@ import com.ride.taxi.presenter.BaseView
 interface MapsContract {
 
     interface View : BaseView {
-        /**
-         * Launchers Auto Complete Activity given the request code
-         * @param requestCode [Int]
-         */
-        fun launchLocationAutocompleteActivity(requestCode: Int)
-
-        /**
-         * Sets the Pickup location
-         */
-        fun showRequestButton()
-
-        /**
-         * Resets view
-         */
-        fun resetView()
-
-        /**
-         * Moves camera to new longitude & latitude
-         * @param longitude [Double]
-         * @param latitude [Double]
-         */
-        fun moveCameraView(longitude: Double, latitude: Double)
-
-        /**
-         * Animates camera to new longitude & latitude
-         * @param longitude [Double]
-         * @param latitude [Double]
-         */
-        fun animateCameraView(longitude: Double, latitude: Double)
-
-        /**
-         * Sets the current location as pickup
-         */
-        fun setCurrentLocationAsPickup()
-
-        /**
-         * Instructs view to open location settings
-         */
-        fun openLocationSettingsActivity()
-
-        /**
-         * setup location listener
-         */
-        fun setupLocationListener()
-
-        /**
-         * Enables user's location on map
-         */
-        fun enableMyLocationOnMap()
 
         fun showNearbyCabs(latLngList: List<Pair<Double, Double>>)
 
@@ -76,30 +27,10 @@ interface MapsContract {
 
         fun informTripEnd()
 
-        /**
-         * Show error
-         * @param error [String]
-         */
         fun showError(error: String)
     }
 
     interface Presenter<V : View> : BasePresenter<V> {
-
-        /**
-         * Launches Auto Complete Activity
-         * @param requestCode [Int]
-         */
-        fun launchLocationAutocompleteActivity(requestCode: Int)
-
-        /**
-         * Sets visibility of request button
-         */
-        fun showRequestButton()
-
-        /**
-         * Resets the view
-         */
-        fun onReset()
 
         /**
          * Requests for nearby cabs
@@ -122,40 +53,6 @@ interface MapsContract {
             dropLatitude: Double,
             dropLongitude: Double
         )
-
-        /**
-         * Instructs view to move camera to new longitude & latitude
-         * @param longitude [Double]
-         * @param latitude [Double]
-         */
-        fun onMoveCamera(longitude: Double, latitude: Double)
-
-        /**
-         * Instructs view to animate camera to new longitude & latitude
-         * @param longitude [Double]
-         * @param latitude [Double]
-         */
-        fun onAnimateCamera(longitude: Double, latitude: Double)
-
-        /**
-         * Sets the current location as pickup
-         */
-        fun onSetCurrentLocationAsPickup()
-
-        /**
-         * Instructs view to open location settings
-         */
-        fun onOpenLocationSettingsActivity()
-
-        /**
-         * Instructs view to setup location listener
-         */
-        fun onSetupLocationListener()
-
-        /**
-         * Instructs View to enable user's location on map
-         */
-        fun onEnableMyLocationOnMap()
 
         /**
          * Handles connection events from WebSocket. Clients can now open communication to WebSocket

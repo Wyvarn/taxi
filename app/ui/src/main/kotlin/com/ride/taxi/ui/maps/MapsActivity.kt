@@ -1,3 +1,4 @@
+@file:Suppress("MaxLineLength")
 package com.ride.taxi.ui.maps
 
 import android.Manifest
@@ -34,6 +35,7 @@ import com.ride.taxi.R
 import com.ride.taxi.presenter.maps.MapsContract
 import com.ride.taxi.ui.BaseActivity
 import com.ride.taxi.utils.AnimationUtils
+import com.ride.taxi.utils.MapUtils
 import com.ride.taxi.utils.PermissionUtils
 import com.ride.taxi.utils.ViewUtils
 import com.ride.taxi.utils.showAlertDialog
@@ -44,8 +46,10 @@ import kotlinx.android.synthetic.main.activity_maps.requestCabButton
 import kotlinx.android.synthetic.main.activity_maps.statusTextView
 import org.koin.android.ext.android.inject
 
-class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View.OnClickListener {
-    val mapsPresenter: MapsContract.Presenter<MapsContract.View> by inject()
+@Suppress("TooManyFunctions")
+class MapsActivity : BaseActivity(), MapsContract.View, MapsView, OnMapReadyCallback,
+    View.OnClickListener {
+    private val mapsPresenter: MapsContract.Presenter<MapsContract.View> by inject()
     private lateinit var googleMap: GoogleMap
 
     private var pickUpLatLng: LatLng? = null
@@ -89,7 +93,7 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                 ) -> {
                     when {
                         PermissionUtils.isLocationEnabled(this) -> {
-                            mapsPresenter.onSetupLocationListener()
+                            setupLocationListener()
                         }
                         else -> {
                             showAlertDialog(
@@ -97,7 +101,7 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                                 title = getString(R.string.enable_gps),
                                 message = getString(R.string.required_for_this_app),
                                 positiveButtonTxt = getString(R.string.enable_now),
-                                action = { mapsPresenter.onOpenLocationSettingsActivity() }
+                                action = { openLocationSettingsActivity() }
                             )
                         }
                     }
@@ -123,13 +127,13 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                         PICKUP_REQUEST_CODE -> {
                             pickUpTextView.text = place.name
                             pickUpLatLng = place.latLng
-                            mapsPresenter.showRequestButton()
+                            showRequestButton()
                         }
 
                         DROP_REQUEST_CODE -> {
                             dropTextView.text = place.name
                             dropLatLng = place.latLng
-                            mapsPresenter.showRequestButton()
+                            showRequestButton()
                         }
                     }
                 }
@@ -155,7 +159,7 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     when {
                         PermissionUtils.isLocationEnabled(this) -> {
-                            mapsPresenter.onSetupLocationListener()
+                            setupLocationListener()
                         }
                         else -> {
                             showAlertDialog(
@@ -163,7 +167,7 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                                 title = getString(R.string.enable_gps),
                                 message = getString(R.string.required_for_this_app),
                                 positiveButtonTxt = getString(R.string.enable_now),
-                                action = { mapsPresenter.onOpenLocationSettingsActivity() }
+                                action = { openLocationSettingsActivity() }
                             )
                         }
                     }
@@ -181,11 +185,11 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
     override fun onClick(v: View?) {
         when (v) {
             pickUpTextView -> {
-                mapsPresenter.launchLocationAutocompleteActivity(PICKUP_REQUEST_CODE)
+                launchLocationAutocompleteActivity(PICKUP_REQUEST_CODE)
             }
 
             dropTextView -> {
-                mapsPresenter.launchLocationAutocompleteActivity(DROP_REQUEST_CODE)
+                launchLocationAutocompleteActivity(DROP_REQUEST_CODE)
             }
 
             requestCabButton -> {
@@ -203,7 +207,7 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
             }
 
             nextRideButton -> {
-                mapsPresenter.onReset()
+                resetView()
             }
         }
     }
@@ -231,9 +235,9 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
         previousLatLngFromServer = null
         currentLatLngFromServer = null
         if (currentLatLng != null) {
-            mapsPresenter.onMoveCamera(currentLatLng?.longitude!!, currentLatLng?.latitude!!)
-            mapsPresenter.onAnimateCamera(currentLatLng?.longitude!!, currentLatLng?.latitude!!)
-            mapsPresenter.onSetCurrentLocationAsPickup()
+            moveCameraView(currentLatLng?.longitude!!, currentLatLng?.latitude!!)
+            animateCameraView(currentLatLng?.longitude!!, currentLatLng?.latitude!!)
+            setCurrentLocationAsPickup()
             mapsPresenter.onRequestNearbyCabs(currentLatLng?.latitude!!, currentLatLng?.longitude!!)
         } else {
             pickUpTextView.text = ""
@@ -288,13 +292,13 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
                     for (location in locationResult.locations) {
                         if (currentLatLng == null) {
                             currentLatLng = LatLng(location.latitude, location.longitude)
-                            mapsPresenter.onSetCurrentLocationAsPickup()
-                            mapsPresenter.onEnableMyLocationOnMap()
-                            mapsPresenter.onMoveCamera(
+                            setCurrentLocationAsPickup()
+                            enableMyLocationOnMap()
+                            moveCameraView(
                                 currentLatLng?.longitude!!,
                                 currentLatLng?.latitude!!
                             )
-                            mapsPresenter.onAnimateCamera(
+                            animateCameraView(
                                 currentLatLng?.longitude!!,
                                 currentLatLng?.latitude!!
                             )
@@ -312,13 +316,6 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
         if (!PermissionUtils.isPermissionGranted(this, Manifest.permission.ACCESS_FINE_LOCATION) &&
             !PermissionUtils.isPermissionGranted(this, Manifest.permission.ACCESS_COARSE_LOCATION)
         ) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
             return
         }
 
@@ -363,6 +360,7 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
         statusTextView.text = getString(R.string.your_cab_is_booked)
     }
 
+    @Suppress("MagicNumber")
     override fun showPath(latLngList: List<Pair<Double, Double>>) {
         val builder = LatLngBounds.Builder()
         for (latLng in latLngList) {
@@ -373,7 +371,7 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
         val polylineOptions = PolylineOptions()
         polylineOptions.color(Color.GRAY)
         polylineOptions.width(5f)
-        polylineOptions.addAll(latLngList)
+        polylineOptions.addAll(latLngList.map { LatLng(it.first, it.second) })
         greyPolyLine = googleMap.addPolyline(polylineOptions)
 
         val blackPolylineOptions = PolylineOptions()
@@ -381,9 +379,19 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
         blackPolylineOptions.color(Color.BLACK)
         blackPolyline = googleMap.addPolyline(blackPolylineOptions)
 
-        originMarker = addOriginDestinationMarkerAndGet(googleMap,  latLngList[0])
+        originMarker = addOriginDestinationMarkerAndGet(
+            googleMap,
+            LatLng(latLngList[0].first, latLngList[0].second)
+        )
         originMarker?.setAnchor(0.5f, 0.5f)
-        destinationMarker = addOriginDestinationMarkerAndGet(googleMap, latLngList[latLngList.size - 1])
+        destinationMarker =
+            addOriginDestinationMarkerAndGet(
+                googleMap,
+                LatLng(
+                    latLngList[latLngList.size - 1].first,
+                    latLngList[latLngList.size - 1].second
+                )
+            )
         destinationMarker?.setAnchor(0.5f, 0.5f)
 
         val polylineAnimator = AnimationUtils.polyLineAnimator()
@@ -395,23 +403,72 @@ class MapsActivity : BaseActivity(), MapsContract.View, OnMapReadyCallback, View
         polylineAnimator.start()
     }
 
+    @Suppress("MagicNumber")
     override fun updateCabLocation(latitude: Double, longitude: Double) {
+        if (movingCabMarker == null) {
+            movingCabMarker = addCarMarkerAndGet(googleMap, this, LatLng(latitude, longitude))
+        }
+        if (previousLatLngFromServer == null) {
+            currentLatLngFromServer = LatLng(latitude, longitude)
+            previousLatLngFromServer = currentLatLngFromServer
+            movingCabMarker?.position = currentLatLngFromServer
+            movingCabMarker?.setAnchor(0.5f, 0.5f)
+            animateCameraView(
+                currentLatLngFromServer!!.longitude,
+                currentLatLngFromServer!!.latitude
+            )
+        } else {
+            previousLatLngFromServer = currentLatLngFromServer
+            currentLatLngFromServer = LatLng(latitude, longitude)
+            val valueAnimator = AnimationUtils.cabAnimator()
+            valueAnimator.addUpdateListener { va ->
+                if (currentLatLngFromServer != null && previousLatLngFromServer != null) {
+                    val multiplier = va.animatedFraction
+                    val nextLocation = LatLng(
+                        multiplier * currentLatLngFromServer!!.latitude + (1 - multiplier) * previousLatLngFromServer!!.latitude,
+                        multiplier * currentLatLngFromServer!!.longitude + (1 - multiplier) * previousLatLngFromServer!!.longitude
+                    )
+                    movingCabMarker?.position = nextLocation
+                    movingCabMarker?.setAnchor(0.5f, 0.5f)
+                    val rotation = MapUtils.getRotation(previousLatLngFromServer!!, nextLocation)
+                    if (!rotation.isNaN()) {
+                        movingCabMarker?.rotation = rotation
+                    }
+                    animateCameraView(nextLocation.longitude, nextLocation.latitude)
+                }
+            }
+            valueAnimator.start()
+        }
     }
 
     override fun informCabIsArriving() {
+        statusTextView.text = getString(R.string.your_cab_is_arriving)
     }
 
     override fun informCabArrived() {
+        statusTextView.text = getString(R.string.your_cab_has_arrived)
+        greyPolyLine?.remove()
+        blackPolyline?.remove()
+        originMarker?.remove()
+        destinationMarker?.remove()
     }
 
     override fun informTripStart() {
+        statusTextView.text = getString(R.string.you_are_on_a_trip)
+        previousLatLngFromServer = null
     }
 
     override fun informTripEnd() {
+        statusTextView.text = getString(R.string.trip_end)
+        nextRideButton.visibility = View.VISIBLE
+        greyPolyLine?.remove()
+        blackPolyline?.remove()
+        originMarker?.remove()
+        destinationMarker?.remove()
     }
 
     override fun showError(error: String) {
         Toast.makeText(this, error, Toast.LENGTH_LONG).show()
-        mapsPresenter.onReset()
+        resetView()
     }
 }
