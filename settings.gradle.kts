@@ -6,5 +6,6 @@ include(
     "app:presenter",
     "domain",
     "data",
-    "remote"
+    "remote",
+    "simulator"
 )
